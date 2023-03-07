@@ -11,22 +11,22 @@ export default function RecipeCard({ recipeData }) {
   console.log(id);
   return (
     <Link href={`/recipe/${id}`}>
-      <article className="group relative w-80 rounded-md border-slate-300 border-2 overflow-hidden hover:shadow-xl hover:scale-105 duration-500">
+      <article className="group relative w-80 overflow-hidden rounded-md border border-slate-200 duration-500 hover:scale-105 hover:shadow-xl">
         <div className="h-60">
           <img
-            className="rounded-sm object-cover w-full h-full"
+            className="h-full w-full rounded-sm object-cover"
             src={image}
             alt={label}
           />
         </div>
         <div className="px-3 py-3">
-          <span className="px-2 bg-teal-100 font-medium rounded-md py-1 mb-2 text-cyan-700">
+          <span className="mb-2 rounded-md bg-teal-100 px-2 py-1 font-light text-cyan-700">
             {cuisineType}
           </span>
-          <h4 className="text-2xl font-bold text-black/80 group-hover:text-blue-700 truncate pt-2">
+          <h4 className="truncate pt-2 text-2xl font-bold text-black/80 group-hover:text-blue-700">
             {label}{" "}
           </h4>
-          <h6 className="text-lg py-1 font-semibold text-gray-500">{source}</h6>
+          <h6 className="py-1 text-lg font-semibold text-gray-500">{source}</h6>
         </div>
       </article>
     </Link>

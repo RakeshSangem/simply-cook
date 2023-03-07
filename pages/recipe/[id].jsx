@@ -5,10 +5,11 @@ import Servings from "@/components/Servings";
 import Footer from "@/components/Footer";
 
 export default function index({ data }) {
+  console.log(data);
   const recipe = data.recipe;
   console.log(recipe);
   return (
-    <main className="max-w-2xl mx-auto">
+    <main className="mx-auto max-w-2xl">
       <Head>
         <title>{recipe.label}</title>
       </Head>
@@ -16,19 +17,19 @@ export default function index({ data }) {
         style={{
           backgroundImage: `url(${recipe.image})`,
         }}
-        className={`w-full h-[300px] bg-red inner-shadow bg-cover bg-no-repeat bg-center`}
+        className={`bg-red inner-shadow h-[300px] w-full bg-cover bg-center bg-no-repeat`}
       ></div>
-      <div className=" w-full text-center z-20">
-        <h1 className="py-2 bg-gradient-to-b from-[#222F5C] to-[#8D61AF] text-transparent bg-clip-text text-5xl font-bold italic ">
+      <div className=" z-20 w-full text-center">
+        <h1 className="bg-gradient-to-b from-[#222F5C] to-[#8D61AF] bg-clip-text py-2 text-5xl font-bold italic text-transparent ">
           {recipe.label}
         </h1>
       </div>
-      <section className="w-full flex gap-6 mx-auto py-4 justify-center">
+      <section className="mx-auto flex w-full justify-center gap-6 py-4">
         {recipe.totalTime > 0 && <Duration time={recipe.totalTime} />}
         {recipe.yield > 0 && <Servings servs={recipe.yield} />}
       </section>
       <section className="mt-8">
-        <h2 className="bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] text-transparent bg-clip-text text-2xl font-semibold text-center">
+        <h2 className="bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text text-center text-2xl font-semibold text-transparent">
           RECIPE INGREDIENTS
         </h2>
         <ul className="grid grid-cols-1 justify-center gap-6 p-10 md:grid-cols-2">
@@ -37,22 +38,22 @@ export default function index({ data }) {
           ))}
         </ul>
         <div>
-          <h2 className="bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] text-transparent bg-clip-text text-2xl font-semibold text-center my-8 px-10">
+          <h2 className="my-8 bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text px-10 text-center text-2xl font-semibold text-transparent">
             HOW TO COOK IT
           </h2>
-          <p className="text-center px-10 text-gray-800">
+          <p className="px-10 text-center text-gray-800">
             This recipe was carefully designed and tested by <span>Food</span>
             Please check out directions at their website
           </p>
           <div className="flex justify-center">
             <a
               href=""
-              className="group inline-flex  w-44 h-12 gap-1 bg-gradient-to-r from-[#1B69B0] to-[#0F2B46] m-5 text-white items-center justify-center rounded-full hover:scale-105 duration-300 active:scale-100 active:translate-y-1"
+              className="group m-5  inline-flex h-12 w-44 items-center justify-center gap-1 rounded-full bg-gradient-to-r from-[#1B69B0] to-[#0F2B46] text-white duration-300 hover:scale-105 active:translate-y-1 active:scale-100"
             >
               DIRECTIONS
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="group-hover:translate-x-1 duration-300"
+                className="duration-300 group-hover:translate-x-1"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

@@ -10,7 +10,7 @@ export default function CategoryItem({ categoryData }) {
   // console.log(id);
   return (
     <Link href={`/recipe/${id}`}>
-      <article className="group relative w-72 border-slate-300 max-w-sm bg-white rounded-lg shadow border-2 overflow-hidden hover:shadow-xl">
+      <article className="group relative w-72 border-slate-300 max-w-sm bg-white rounded-lg shadow border overflow-hidden hover:shadow-xl">
         <div className="h-60">
           <img
             className="rounded-sm object-cover w-full h-full"
