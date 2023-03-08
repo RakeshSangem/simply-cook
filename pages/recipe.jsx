@@ -28,12 +28,12 @@ export default function Recipe({ hits }) {
   };
 
   return (
-    <main className="h-full mx-auto px-4 dark">
+    <main className="dark mx-auto h-full px-4">
       <Head>
         <title>Search Recipe</title>
       </Head>
       <SearchBar onSubmit={getRecipe} />
-      <section className="w-full flex gap-6 p-4 flex-wrap justify-center">
+      <section className="flex w-full flex-wrap justify-center gap-6 p-4">
         {isLoading ? (
           <Loader />
         ) : (
