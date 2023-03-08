@@ -1,14 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&family=Open+Sans:wght@300;400;500;600&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  font-family: "Nunito", sans-serif;
-  font-weight: 400;
-  /* font-family: "Open Sans", sans-serif; */
-}
 
 .inner-shadow {
   -webkit-box-shadow: inset 0px -127px 68px -18px rgba(255, 255, 255, 1);
