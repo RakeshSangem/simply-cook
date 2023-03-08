@@ -1,25 +1,29 @@
 import Link from "next/link";
 
-export default function CategoryItem({ categoryData }) {
+export default function CategoryItem({ categoryData, onImageLoaded }) {
   const { label, image } = categoryData.recipe;
+
+  console.log("I'm dumb");
 
   const string = categoryData._links.self.href;
   const url = new URL(string);
   const urlPath = url.pathname.split("/");
   const id = urlPath[urlPath.length - 1];
+
   // console.log(id);
   return (
     <Link href={`/recipe/${id}`}>
-      <article className="group relative w-72 border-slate-300 max-w-sm bg-white rounded-lg shadow border overflow-hidden hover:shadow-xl">
+      <article className="group relative w-72 max-w-sm overflow-hidden rounded-lg border border-slate-300 bg-white shadow hover:shadow-xl">
         <div className="h-60">
           <img
-            className="rounded-sm object-cover w-full h-full"
+            onLoad={() => onImageLoaded(false)}
+            className="h-full w-full rounded-sm object-cover"
             src={image}
             alt={label}
           />
         </div>
-        <div className="absolute bottom-0 w-full h-1/2 pb-5 flex justify-center items-end fade-up text-center">
-          <h2 className="text-white text-lg">{label}</h2>
+        <div className="fade-up absolute bottom-0 flex h-1/2 w-full items-end justify-center pb-5 text-center">
+          <h2 className="text-lg text-white">{label}</h2>
         </div>
       </article>
     </Link>
