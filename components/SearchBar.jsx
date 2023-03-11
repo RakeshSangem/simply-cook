@@ -6,19 +6,19 @@ export default function SearchBar({ onSubmit }) {
   return (
     <form
       onSubmit={(e) => onSubmit(e, value)}
-      className="w-full md:max-w-lg mx-auto m-4"
+      className="m-4 mx-auto w-full md:max-w-lg "
     >
       <label
         htmlFor="default-search"
-        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
         Search
       </label>
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <div className="relative ">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 ">
           <svg
             aria-hidden="true"
-            className="w-5 h-5 text-gray-500"
+            className="h-5 w-5 text-gray-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -34,7 +34,7 @@ export default function SearchBar({ onSubmit }) {
         </div>
         <input
           type="search"
-          className="block w-full p-4 pl-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+          className="text-md block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-gray-900 focus:border-blue-700 focus:outline-none focus:shadow-md"
           placeholder="Search over 100,000 recipes..."
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -42,7 +42,7 @@ export default function SearchBar({ onSubmit }) {
         />
         <button
           type="submit"
-          className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-md px-4 py-2"
+          className="text-md absolute right-2.5 bottom-2.5 rounded-lg bg-blue-700 px-4 py-2 font-medium text-white hover:bg-blue-800 focus:outline-none"
         >
           Search
         </button>
