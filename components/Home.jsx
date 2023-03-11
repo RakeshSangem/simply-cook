@@ -26,6 +26,9 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <section className="">
+        <div>Find your favorite recipe at your finger tips</div>
+      </section>
     </main>
   );
 }
