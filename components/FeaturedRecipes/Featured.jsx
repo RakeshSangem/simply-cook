@@ -9,7 +9,7 @@ export default function Featured({ data }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <section className="mx-auto w-full pb-10 md:max-w-4xl">
+    <section className="mx-auto w-full pb-10 md:max-w-6xl">
       <h2 className="pb-4 text-lg font-semibold">Top picks</h2>
       <div className="no-scrollbar mx-auto w-full snap-x overflow-hidden overflow-x-scroll pb-8">
         <div
@@ -17,7 +17,7 @@ export default function Featured({ data }) {
             isImageLoading ? "hidden" : "flex"
           } justify-between gap-x-2`}
         >
-          {data.slice(0, 3).map((recipe, idx) => {
+          {data.slice(0, 4).map((recipe, idx) => {
             return (
               <CategoryItem
                 key={idx}
@@ -28,7 +28,7 @@ export default function Featured({ data }) {
           })}
         </div>
         <div className={`${isImageLoading ? "flex" : "hidden"} gap-x-2`}>
-          {Array.from({ length: 3 }).map((_, idx) => (
+          {Array.from({ length: 4 }).map((_, idx) => (
             <Skeleton key={idx} />
           ))}
         </div>
