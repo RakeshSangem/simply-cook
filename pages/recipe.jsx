@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Head from "next/head";
 import SearchBar from "@/components/SearchBar";
 import Loader from "@/components/Loader";
@@ -14,7 +14,7 @@ export default function Recipe() {
   useEffect(() => {
     (async () => {
       const request = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.NEXT_PUBLIC_APP_ID}&app_key=${process.env.NEXT_PUBLIC_APP_KEY}&health=vegetarian&random=true`
+        `https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.NEXT_PUBLIC_APP_ID}&app_key=${process.env.NEXT_PUBLIC_APP_KEY}&dishType=Desserts&dishType=Main%20course&random=true`
       );
       const { hits } = await request.json();
       setHits((hitsOld) => {
