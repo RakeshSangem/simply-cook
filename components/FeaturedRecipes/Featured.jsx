@@ -8,7 +8,7 @@ export default function Featured({ data }) {
   const [isImageLoading, setImageLoading] = useState(true);
 
   return (
-    <section className="mx-auto w-full md:max-w-4xl">
+    <section className="mx-auto w-full pb-10 md:max-w-4xl">
       <h2 className="pb-4 text-lg font-semibold">Top picks</h2>
       <div className="no-scrollbar mx-auto w-full snap-x overflow-hidden overflow-x-scroll pb-8">
         <div
