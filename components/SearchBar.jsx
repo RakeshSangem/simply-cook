@@ -6,7 +6,7 @@ export default function SearchBar({ onSubmit }) {
   return (
     <form
       onSubmit={(e) => onSubmit(e, value)}
-      className="m-4 mx-auto w-full md:max-w-lg "
+      className="m-4 mx-auto w-full md:max-w-2xl"
     >
       <label
         htmlFor="default-search"

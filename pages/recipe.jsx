@@ -48,7 +48,7 @@ export default function Recipe() {
         <title>Search Recipe</title>
       </Head>
       <SearchBar onSubmit={getRecipe} />
-      <section className="flex w-full flex-wrap justify-center gap-6 p-4">
+      <section className="mx-auto flex w-full max-w-6xl flex-wrap justify-center gap-6 p-4">
         {isLoading ? (
           <Loader />
         ) : (
