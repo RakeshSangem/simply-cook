@@ -1,11 +1,12 @@
 import CategoryItem from "@/components/Categories/CategoryItem";
 import { useState } from "react";
 import Skeleton from "../Skeleton/Skeleton";
-import TrendingSkeleton from "../Skeleton/TredingSkeleton";
+import TrendingSkeleton from "../Skeleton/TrendingSkeleton";
 import TrendingItem from "./TrendingItem";
 
 export default function Featured({ data }) {
   const [isImageLoading, setImageLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <section className="mx-auto w-full pb-10 md:max-w-4xl">

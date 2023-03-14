@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Loader from "../Loader";
 
 export default function TrendingItem({ trendingRecipe }) {
   const { image, label } = trendingRecipe.recipe;
@@ -11,7 +10,8 @@ export default function TrendingItem({ trendingRecipe }) {
 
   return (
     <Link href={`/recipe/${id}`}>
-      <article class="h-64 w-48 shrink-0 snap-center overflow-hidden rounded-3xl duration-300 hover:w-72">
+      <article class="h-64 w-48 shrink-0 snap-center overflow-hidden rounded-3xl duration-300">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="h-full w-full object-cover" src={image} alt={label} />
       </article>
     </Link>

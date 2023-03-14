@@ -1,9 +1,10 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import SearchBar from "@/components/SearchBar";
 import Loader from "@/components/Loader";
 import RecipeCard from "@/components/RecipeCard";
 import Featured from "@/components/FeaturedRecipes/Featured";
+import Footer from "@/components/Footer";
 
 export default function Recipe() {
   const [recipes, setRecipes] = useState([]);
@@ -56,7 +57,8 @@ export default function Recipe() {
           ))
         )}
       </section>
-      {isFetched ? "" : <Featured data={hits} />}
+      {isFetched ? <></> : <Featured data={hits} />}
+      <Footer />
     </main>
   );
 }
