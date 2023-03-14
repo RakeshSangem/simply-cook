@@ -1,6 +1,6 @@
 export default function TrendingSkeleton() {
   return (
-    <div className="grid h-64 w-48 shrink-0 animate-pulse place-items-center overflow-hidden rounded-3xl bg-gray-300">
+    <div className="grid h-64 w-48 shrink-0 animate-pulse place-items-center overflow-hidden rounded-3xl bg-gray-200">
       <svg
         className="h-20 w-20 text-gray-300"
         xmlns="http://www.w3.org/2000/svg"
