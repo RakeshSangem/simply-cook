@@ -1,16 +1,22 @@
 import CategoryItem from "@/components/Categories/CategoryItem";
 import { useState } from "react";
 import Skeleton from "../Skeleton/Skeleton";
+import TrendingSkeleton from "../Skeleton/TrendingSkeleton";
+import TrendingItem from "./TrendingItem";
 
 export default function Featured({ data }) {
   const [isImageLoading, setImageLoading] = useState(true);
-  // console.log(data);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <section className="mx-auto w-full md:max-w-4xl">
-      <h2 className="pb-4 text-lg">Our Vegetarian picks</h2>
-      <section className="mx-auto w-full overflow-hidden overflow-x-scroll pb-8">
-        <div className={`${isImageLoading ? "hidden" : "flex"} gap-x-2 `}>
+    <section className="mx-auto w-full pb-10 md:max-w-4xl">
+      <h2 className="pb-4 text-lg font-semibold">Top picks</h2>
+      <div className="no-scrollbar mx-auto w-full snap-x overflow-hidden overflow-x-scroll pb-8">
+        <div
+          className={`${
+            isImageLoading ? "hidden" : "flex"
+          } justify-between gap-x-2`}
+        >
           {data.slice(0, 3).map((recipe, idx) => {
             return (
               <CategoryItem
@@ -26,9 +32,19 @@ export default function Featured({ data }) {
             <Skeleton key={idx} />
           ))}
         </div>
+      </div>
+      <h2 className="pb-4 text-lg font-semibold">Trending</h2>
+      <section className="no-scrollbar mx-auto flex w-full snap-x gap-x-3 overflow-hidden overflow-x-scroll">
+        {data.length > 0
+          ? data
+              .slice(4)
+              .map((recipe, idx) => (
+                <TrendingItem key={idx} trendingRecipe={recipe} />
+              ))
+          : Array.from({ length: 10 }).map((_, idx) => (
+              <TrendingSkeleton key={idx} />
+            ))}
       </section>
-      <h2 className="pb-4 text-lg">Trending</h2>
-      <section className="mx-auto flex w-full gap-x-6 overflow-hidden overflow-x-scroll"></section>
     </section>
   );
 }

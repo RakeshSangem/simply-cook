@@ -3,8 +3,6 @@ import Link from "next/link";
 export default function CategoryItem({ categoryData, onImageLoaded }) {
   const { label, image } = categoryData.recipe;
 
-  console.log("I'm dumb");
-
   const string = categoryData._links.self.href;
   const url = new URL(string);
   const urlPath = url.pathname.split("/");
@@ -13,7 +11,7 @@ export default function CategoryItem({ categoryData, onImageLoaded }) {
   // console.log(id);
   return (
     <Link href={`/recipe/${id}`}>
-      <article className="group relative w-72 max-w-sm overflow-hidden rounded-lg border border-slate-300 bg-white shadow hover:shadow-xl">
+      <article className="group relative w-72 max-w-sm snap-center overflow-hidden rounded-3xl border border-slate-300 bg-white shadow hover:shadow-xl">
         <div className="h-60">
           <img
             onLoad={() => onImageLoaded(false)}

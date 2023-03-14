@@ -4,6 +4,7 @@ import SearchBar from "@/components/SearchBar";
 import Loader from "@/components/Loader";
 import RecipeCard from "@/components/RecipeCard";
 import Featured from "@/components/FeaturedRecipes/Featured";
+import Footer from "@/components/Footer";
 
 export default function Recipe() {
   const [recipes, setRecipes] = useState([]);
@@ -14,7 +15,7 @@ export default function Recipe() {
   useEffect(() => {
     (async () => {
       const request = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.NEXT_PUBLIC_APP_ID}&app_key=${process.env.NEXT_PUBLIC_APP_KEY}&health=vegetarian&random=true`
+        `https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.NEXT_PUBLIC_APP_ID}&app_key=${process.env.NEXT_PUBLIC_APP_KEY}&dishType=Desserts&dishType=Main%20course&random=true`
       );
       const { hits } = await request.json();
       setHits((hitsOld) => {
@@ -56,7 +57,8 @@ export default function Recipe() {
           ))
         )}
       </section>
-      {isFetched ? "" : <Featured data={hits} />}
+      {isFetched ? <></> : <Featured data={hits} />}
+      <Footer />
     </main>
   );
 }
