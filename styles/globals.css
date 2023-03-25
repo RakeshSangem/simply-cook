@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .inner-shadow {
   -webkit-box-shadow: inset 0px -127px 68px -18px rgba(255, 255, 255, 1);
   -moz-box-shadow: inset 0px -127px 68px -18px rgba(255, 255, 255, 1);
