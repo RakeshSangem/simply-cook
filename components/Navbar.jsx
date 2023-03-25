@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="mx-auto flex h-20 w-full  items-center border-b border-gray-200">
+    <nav className="z-10 bg-red-transparent mx-auto flex  h-20 w-full items-center border-b border-gray-200">
       <div className="container mx-auto flex max-w-6xl items-center justify-between">
         <Link href={"/"}>
           {/* eslint-disable-next-line @next/next/no-img-element*/}
