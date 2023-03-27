@@ -48,7 +48,7 @@ export default function IngredientList({ ingredient }) {
           width="32"
           height="32"
           viewBox="0 0 32 32"
-          className="opacity-40 transition-opacity duration-200 ease-in-out hover:opacity-100"
+          className="opacity-40 transition-opacity relative -z-10 duration-200 ease-in-out hover:opacity-100"
         >
           <path
             fill="currentColor"
