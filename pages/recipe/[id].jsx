@@ -5,9 +5,8 @@ import Servings from "@/components/Servings";
 import Footer from "@/components/Footer";
 
 export default function index({ data }) {
-  console.log(data);
   const recipe = data.recipe;
-  console.log(recipe);
+
   return (
     <main className="mx-auto max-w-2xl">
       <Head>
@@ -17,9 +16,9 @@ export default function index({ data }) {
         style={{
           backgroundImage: `url(${recipe.image})`,
         }}
-        className={`bg-red inner-shadow h-[300px] w-full bg-cover bg-center bg-no-repeat`}
+        className="bg-red inner-shadow h-[300px] w-full bg-cover bg-center bg-no-repeat"
       ></div>
-      <div className=" z-20 w-full text-center">
+      <div className="z-5 w-full text-center">
         <h1 className="bg-gradient-to-b from-[#222F5C] to-[#8D61AF] bg-clip-text py-2 text-5xl font-bold italic text-transparent ">
           {recipe.label}
         </h1>
