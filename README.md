@@ -21,11 +21,11 @@ To run this project locally, follow these steps:
 
 2. Clone the project by running
    ```sh
-   git clone https://github.com/<your-github-username>/projectmate.git
+   git clone https://github.com/<your-github-username>/simply-cook.git
    ```
 3. Go into the project directory
    ```sh
-   cd projectmate
+   cd simply-cook
    ```
 4. Install the dependencies
    ```sh
