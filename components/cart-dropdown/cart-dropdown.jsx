@@ -1,7 +1,6 @@
-import CartItem from "../Cart/CartItem";
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../contexts/cartContext";
-import useOnClickOutside from "@/hooks/useOnClickOutside";
+import CartItem from "../Cart/CartItem";
 
 export default function CartDropDown() {
   const { items, itemsCount, setIsCartOpen } = useContext(CartContext);
