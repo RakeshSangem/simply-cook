@@ -6,10 +6,11 @@ const nunito = Nunito({
 });
 
 export default function Home() {
+
   return (
     <>
       <main
-        className={`${nunito.className} z-3 relative mx-auto grid place-items-center bg-cover bg-center px-4`}
+        className={`${nunito.className} relative mx-auto grid place-items-center bg-cover bg-center px-4`}
       >
         <div className=" py-12 text-center">
           <h1 className="leading-tighter mb-4 max-w-3xl text-5xl font-bold tracking-tighter md:text-6xl">
