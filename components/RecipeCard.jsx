@@ -8,11 +8,11 @@ export default function RecipeCard({ recipeData }) {
   const url = new URL(string);
   const urlPath = url.pathname.split("/");
   const id = urlPath[urlPath.length - 1];
-  console.log(id);
   return (
     <Link href={`/recipe/${id}`}>
       <article className="group relative w-80 overflow-hidden rounded-md border border-slate-200 duration-500 hover:scale-105 hover:shadow-xl">
         <div className="h-60">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-full w-full rounded-sm object-cover"
             src={image}
