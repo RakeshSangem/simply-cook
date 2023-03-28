@@ -14,7 +14,7 @@ export default function Home() {
           <div className="py-10">
             <Link
               href="/recipe"
-              className="rounded-md bg-blue-500 px-12 py-3 text-xl font-medium text-white hover:bg-blue-600"
+              className="rounded-md bg-blue-500 px-12 py-3 text-lg font-medium text-white hover:bg-blue-600"
             >
               Explore Recipes
             </Link>
