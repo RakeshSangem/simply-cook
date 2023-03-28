@@ -2,18 +2,16 @@ import { UserContext } from "@/contexts/userContext";
 import { signInWithGooglePopup } from "@/lib/firebase";
 import Link from "next/link";
 import { useContext, useRef, useState, useEffect } from "react";
-import { signOutUser } from "@/lib/firebase";
 
 import { CartContext } from "@/contexts/cartContext";
 import CartDropDown from "./cart-dropdown/cart-dropdown";
+import Avatar from "./Avatar";
 
 export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { user } = useContext(UserContext);
   const { isCartOpen, setIsCartOpen, itemsCount } = useContext(CartContext);
   const buttonRef = useRef(null);
-
-  const newUser = user ? user.displayName.split(" ")[0] : "";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +31,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={` sticky z-50 mx-auto flex h-16 w-full items-center  border-b border-gray-200 px-2 transition-transform duration-300 ease-in-out ${
+      className={`sticky z-50 mx-auto flex h-16 w-full items-center border-b border-gray-200 px-4 transition-transform duration-300 ease-in-out ${
         isNavbarFixed
           ? "animate-slide-down sticky top-0 bg-white/60 backdrop-blur-sm"
           : ""
@@ -43,22 +41,9 @@ export default function Navbar() {
         {isCartOpen && <CartDropDown buttonRef={buttonRef} />}
         <Link href={"/"}>
           {/* eslint-disable-next-line @next/next/no-img-element*/}
-          <img className="w-20 md:w-36" src="/logo.png" alt="" />
+          <img className="w-28 md:w-36" src="/logo.png" alt="" />
         </Link>
-        {user && (
-          <p className="text-gray-500 hidden sm:flex">
-            Welcome,{" "}
-            <span className="text-lg font-semibold text-slate-600">
-              {newUser}
-            </span>
-          </p>
-        )}
-        <ul className="flex items-center gap-x-8">
-          {user ? (
-            <button onClick={signOutUser}>Sign Out</button>
-          ) : (
-            <button onClick={loginWithGoogle}>Sign In</button>
-          )}
+        <div className="flex items-center gap-x-4 sm:gap-x-8">
           <button
             ref={buttonRef}
             onClick={() => setIsCartOpen(!isCartOpen)}
@@ -85,7 +70,18 @@ export default function Navbar() {
               </span>
             )}
           </button>
-        </ul>
+          {user ? (
+            <Avatar user={user} />
+          ) : (
+            <button
+              type="button"
+              onClick={loginWithGoogle}
+              className="rounded-lg border border-gray-300 bg-white py-2 px-5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200"
+            >
+              Login
+            </button>
+          )}
+        </div>
       </div>
     </nav>
   );

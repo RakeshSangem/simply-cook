@@ -1,8 +1,8 @@
-import IngredientList from "../../components/IngredientList";
-import Head from "next/head";
 import Duration from "@/components/Duration";
-import Servings from "@/components/Servings";
 import Footer from "@/components/Footer";
+import Servings from "@/components/Servings";
+import Head from "next/head";
+import IngredientList from "../../components/IngredientList";
 
 export default function index({ data }) {
   const recipe = data.recipe;
@@ -19,7 +19,7 @@ export default function index({ data }) {
         className="bg-red inner-shadow h-[300px] w-full bg-cover bg-center bg-no-repeat"
       ></div>
       <div className="z-5 w-full text-center">
-        <h1 className="bg-gradient-to-b from-[#222F5C] to-[#8D61AF] bg-clip-text py-2 text-5xl font-bold italic text-transparent ">
+        <h1 className="sm:5xl bg-gradient-to-b from-[#222F5C] to-[#8D61AF] bg-clip-text py-2 text-4xl font-bold italic text-transparent md:px-1">
           {recipe.label}
         </h1>
       </div>
@@ -28,7 +28,7 @@ export default function index({ data }) {
         {recipe.yield > 0 && <Servings servs={recipe.yield} />}
       </section>
       <section className="mt-8">
-        <h2 className="bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text text-center text-2xl font-semibold text-transparent">
+        <h2 className="bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text text-center text-xl font-semibold text-transparent">
           RECIPE INGREDIENTS
         </h2>
         <ul className="grid grid-cols-1 justify-center gap-6 p-10 md:grid-cols-2">
@@ -37,16 +37,17 @@ export default function index({ data }) {
           ))}
         </ul>
         <div>
-          <h2 className="my-8 bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text px-10 text-center text-2xl font-semibold text-transparent">
+          <h2 className="my-8 bg-gradient-to-b from-[#1B69B0] to-[#0F2B46] bg-clip-text px-10 text-center text-xl font-semibold text-transparent">
             HOW TO COOK IT
           </h2>
-          <p className="px-10 text-center text-gray-800">
-            This recipe was carefully designed and tested by <span>Food</span>
+          <p className="px-10 text-center text-gray-600">
+            This recipe was carefully designed and tested by
+            <span className="px-1 font-semibold">{recipe.source}</span>
             Please check out directions at their website
           </p>
           <div className="flex justify-center">
             <a
-              href=""
+              href={recipe.url}
               className="group m-5  inline-flex h-12 w-44 items-center justify-center gap-1 rounded-full bg-gradient-to-r from-[#1B69B0] to-[#0F2B46] text-white duration-300 hover:scale-105 active:translate-y-1 active:scale-100"
             >
               DIRECTIONS
