@@ -43,7 +43,7 @@ export default function Recipe() {
   };
 
   return (
-    <main className="dark mx-auto h-full px-4">
+    <main className="dark mx-auto h-full px-4 z-20 overflow-y-scroll">
       <Head>
         <title>Search Recipe</title>
       </Head>
