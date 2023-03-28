@@ -3,9 +3,9 @@ import { CartContext } from "../../contexts/cartContext";
 import CartItem from "../Cart/CartItem";
 
 export default function CartDropDown({ buttonRef }) {
-  const { items, itemsCount, setIsCartOpen } = useContext(CartContext);
+  const { items, itemsCount, setIsCartOpen, isCartOpen } =
+    useContext(CartContext);
   const dropDownRef = useRef();
-  console.log();
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -28,7 +28,7 @@ export default function CartDropDown({ buttonRef }) {
   return (
     <div
       ref={dropDownRef}
-      className="absolute top-12 right-16 z-40 flex h-96 w-96 flex-col rounded-2xl border border-gray-200 bg-white shadow-xl sm:right-6 sm:max-w-md"
+      className="absolute top-12 right-0 z-40 flex h-96 flex-col rounded-2xl border border-gray-200 bg-white shadow-xl sm:right-6 sm:w-[450px] sm:max-w-none md:right-8"
     >
       <div className="border-b border-gray-200 py-2 px-4 sm:px-6">
         <div className="flex items-start justify-between">
