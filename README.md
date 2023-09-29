@@ -37,7 +37,10 @@ To run this project locally, follow these steps:
    ```sh
    yarn dev
    ```
-   
+
+
+## Support Me
+<a href="https://www.buymeacoffee.com/rakeshsangem" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 ## Get in touch
 
 Follow me on Twitter for updates and more [@RakeshSangem8](https://www.twitter.com/RakeshSangem8)
